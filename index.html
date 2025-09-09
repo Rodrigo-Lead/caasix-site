@@ -1,0 +1,115 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CaaSix</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <nav class="navbar">
+    <div class="logo">
+      <!-- Coloque sua logo em assets/logo.png -->
+      <a href="index.html"><img src="/img/Logo-caaxis.png" alt="CaaSix" class="logo-img"></a>
+    </div>
+    <ul class="menu">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#planos">Planos</a></li>
+      <li><a href="portfolio.html">Portfólio</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Criamos experiências visuais que conectam marcas e pessoas</h1>
+      <a href="#servicos" class="btn">Conheça nossos serviços</a>
+    </div>
+  </header>
+
+  <!-- Serviços -->
+  <section id="servicos" class="servicos">
+    <div class="servico">
+      <div class="texto">
+        <h2><span class="highlight">Caasix Motion</span></h2>
+        <p>Edição de Vídeo + Motion - Transformamos suas ideias em conteúdos audiovisuais impactantes, com edição, locução e animação criativa.</p>
+      </div>
+      <img src="/img/banner-Caasixmotion.jpg" alt="Edição de vídeo">
+    </div>
+    <div class="servico">
+      <img src="/img/banner-CaasixContent.jpg" alt="Social Media">
+      <div class="texto">
+        <h2><span class="highlight">Caasix Content</span></h2>
+        <p>Gerenciamos suas redes com estratégia e criatividade para gerar mais engajamento e resultados.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Planos -->
+  <section id="planos" class="planos">
+    <h2><span class="highlight">Planos</span></h2>
+    <div class="cards">
+      <div class="card" onclick="flipCard(this)">
+        <div class="front">
+          <img src="/img/Plano-orange.png" alt="Plano Bronze">
+        </div>
+        <div class="back">
+          <h3><span class="highlight">Plano Orange</span></h3>
+          <ul>
+            <p>Essencial para começar!</p>
+            <br>
+          <p><span class="highlight">Ideal para quem está começando e quer presença digital sem complicação.</span></p>
+          </ul>
+          <a href="planos.html" class="btn">Saiba mais</a>
+        </div>
+      </div>
+      <div class="card" onclick="flipCard(this)">
+        <div class="front">
+          <img src="/img/Plano-green.png" alt="Plano Prata">
+        </div>
+        <div class="back">
+          <h3><span class="highlight">Plano Green</span></h3>
+          <ul>
+            <p>Crescimento e engajamento!</p>
+            <br>
+          <p><span class="highlight">Perfeito para quem precisa aumentar alcance e engajamento.</span></p>
+          </ul>
+          <a href="planos.html" class="btn">Saiba mais</a>
+        </div>
+      </div>
+      <div class="card" onclick="flipCard(this)">
+        <div class="front">
+          <img src="/img/Plano-yellow.png" alt="Plano Ouro">
+        </div>
+        <div class="back">
+          <h3><span class="highlight">Plano Yellow</span></h3>
+          <ul>
+            <p>Estratégia completa!</p>
+            <br>
+          <p><span class="highlight">Para quem busca destaque, consistência e resultado profissional.</span></p>
+          </ul>
+          <a href="planos.html" class="btn">Saiba mais</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfólio -->
+  <section class="portfolio-banner">
+    <h2>Explore nossos projetos</h2>
+    <a href="portfolio.html" class="btn">Ver Portfólio</a>
+  </section>
+
+  <!-- Contato -->
+  <footer id="contato" class="contato">
+    <h2>Contato</h2>
+    <p>Telefone: (81) 99450-9605</p>
+    <!--<p>WhatsApp: (81) 98888-8888</p>-->
+    <p>Instagram: @caasixstudio</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
