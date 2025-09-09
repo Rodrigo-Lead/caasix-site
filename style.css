@@ -179,7 +179,8 @@ body {
   
   @media (max-width: 480px) {
     .portfolio-item img {
-      max-width: 140px;  /* menor em celular */
+      max-width: 360px;  /* menor em celular */
     }
 
   }
+
