@@ -110,7 +110,7 @@ body {
 @media (max-width: 520px) {
   .navbar .menu { display: none; }
   .logo-img { height: 36px; }
-  .card { width: 200px; height: 340px; }
+  /*.card { width: 200px; height: 340px; }*/
 }
 
 .highlight {
@@ -181,4 +181,5 @@ body {
     .portfolio-item img {
       max-width: 140px;  /* menor em celular */
     }
+
   }
