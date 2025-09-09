@@ -1,4 +1,4 @@
-# CaaSix - Site Institucional
+# CaaSix - Site
 
 ![Hero Banner](assets/hero-screenshot.jpg)
 
