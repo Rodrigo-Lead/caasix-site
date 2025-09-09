@@ -173,14 +173,15 @@ body {
   /* Responsividade */
   @media (max-width: 768px) {
     .portfolio-item img {
-      max-width: 600px;  /* menor em tablets */
+      max-width: 100%;  /* menor em tablets */
     }
   }
   
   @media (max-width: 480px) {
     .portfolio-item img {
-      max-width: 360px;  /* menor em celular */
+      max-width: 100%;  /* menor em celular */
     }
 
   }
+
 
