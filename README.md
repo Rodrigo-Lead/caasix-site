@@ -44,4 +44,4 @@ Este projeto é desenvolvido com **HTML, CSS e JavaScript puro**, totalmente res
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/CaaSix.git
+git clone https://github.com/rodrigo-lead/CaaSix.git
