@@ -91,7 +91,7 @@ body {
 .comparacao th, .comparacao td { border: 1px solid #C6FF00; padding: 12px; text-align: center; }
 
 .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; padding: 20px; max-width: 1200px; margin: 0 auto; }
-.item { background: #111; padding: 36px; text-align: center; cursor: pointer; border-radius: 12px; border: 1px solid rgba(198,255,0,0.08); }
+.item { background: #111; padding: 8px; text-align: center; cursor: pointer; border-radius: 12px; border: 1px solid rgba(198,255,0,0.08); }
 .portfolio-item { background: #111; padding: 8px; text-align: center; cursor: pointer; border-radius: 12px; border: 1px solid rgba(198,255,0,0.08); }
 
 
@@ -183,6 +183,7 @@ body {
     }
 
   }
+
 
 
 
