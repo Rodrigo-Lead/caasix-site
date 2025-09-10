@@ -184,6 +184,48 @@ body {
 
   }
 
+  /* Ajuste só para mobile */
+@media (max-width: 768px) {
+    .planos-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: nowrap; /* impede quebra de linha */
+      overflow-x: auto;  /* rolagem horizontal se a tela for muito estreita */
+      padding-bottom: 10px;
+    }
+  
+    .card {
+      flex: 0 0 140px; /* largura fixa para não distorcer */
+      height: 210px;   /* mantém proporção menor no mobile */
+      margin: 0 5px;
+    }
+  
+    /* Verso dos cards */
+.card .back {
+    font-size: 0.2rem;   /* reduz fonte geral */
+    line-height: 0.6;    /* diminui espaçamento */
+  }
+  
+  .card .back h3 {
+    font-size: 0.8rem;   /* título menor */
+    margin-bottom: 10px;
+    margin-top: 2px;
+  }
+  
+  .card .back ul {
+    font-size: 0.7rem;  /* lista mais compacta */
+    line-height: 1.0;
+    margin: 2px 0 2px 2px;
+  }
+  
+  .card .back .btn {
+    font-size: 0.85rem;  /* botão menor */
+    padding: 8px 12px;
+  }
+  }
+
+
 
 
 
