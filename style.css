@@ -59,7 +59,7 @@ body {
 .servico.inverso { flex-direction: row-reverse; }
 .servico img { max-width: 45%; border-radius: 10px; }
 
-.planos { padding: 50px 20px; text-align: center; }
+.planos { padding: 0px 20px; text-align: center; }
 .cards { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
 
 /* Cartas estilo baralho (maiores) */
@@ -225,6 +225,7 @@ body {
     padding: 8px 12px;
   }
   }
+
 
 
 
