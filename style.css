@@ -29,6 +29,7 @@ body {
 .logo-img { height: 44px; width: auto; display: block; }
 
 .navbar {
+  height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -224,6 +225,7 @@ body {
     padding: 8px 12px;
   }
   }
+
 
 
 
