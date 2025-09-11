@@ -1,14 +1,22 @@
-/* style.css */
+/* ================== RESET / BASE ================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #0d0d0d;
   color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* HERO + LOGO */
+/* ================== HERO ================== */
 .hero {
-  background: url('img/Bg.png') center/cover no-repeat;
+  background: url('/img/Bg.png') center/cover no-repeat;
   text-align: center;
   padding: 120px 20px;
   position: relative;
@@ -16,6 +24,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 60px; /* compensação da navbar fixa */
+  overflow: hidden;
 }
 
 .hero::after {
@@ -24,65 +34,251 @@ body {
   top: 0; left: 0;
   width: 100%; height: 100%;
   background: rgba(0,0,0,0.55);
+  z-index: 1;
 }
 
-.logo-img { height: 44px; width: auto; display: block; }
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
 
+.hero-content h1 {
+  font-size: 2rem;
+  margin-bottom: 18px;
+  color: #fff;
+  line-height: 1.1;
+}
+
+/* ================== NAVBAR ================== */
+.logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+
+/* navbar ocupa toda a largura, conteúdo centralizado pela navbar-container */
 .navbar {
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+  z-index: 2000;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(255,255,255,0.02);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
   height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: calc(100% - 40px);
+  position: relative; /* importante para posicionar o menu no mobile */
 }
 
+/* Menu (desktop) */
 .navbar .menu {
   list-style: none;
   display: flex;
   gap: 20px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
-.navbar a { color: #C6FF00; text-decoration: none; }
+.navbar .menu li { margin: 0; }
+.navbar a {
+  color: #C6FF00;
+  text-decoration: none;
+  font-weight: 500;
+}
 
-.hero-content { position: relative; z-index: 2; }
-.hero-content h1 { font-size: 2rem; margin-bottom: 18px; color: #ffffff; }
+/* botão hamburguer (visible only on mobile via media query) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #C6FF00;
+  cursor: pointer;
+  padding: 6px;
+  line-height: 1;
+}
 
-.btn { display: inline-block; background: #C6FF00; color: #121212; padding: 10px 20px; border-radius: 6px; text-decoration: none; }
+/* ================== BOTÃO ================== */
+.btn {
+  display: inline-block;
+  background: #C6FF00;
+  color: #121212;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
 
-.servicos { padding: 50px 20px; max-width: 1200px; margin: 0 auto; }
+/* ================== SEÇÕES ================== */
+.servicos {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-.servico { display: flex; justify-content: space-between; align-items: center; margin-bottom: 50px; gap: 20px; }
+.servico {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  gap: 20px;
+}
 .servico.inverso { flex-direction: row-reverse; }
-.servico img { max-width: 45%; border-radius: 10px; }
+.servico img { max-width: 45%; border-radius: 10px; display: block; }
 
-.planos { padding: 0px 20px; text-align: center; }
-.cards { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+/* ================== PLANOS / CARDS ================== */
+.planos {
+  padding: 20px;
+  text-align: center;
+}
 
-/* Cartas estilo baralho (maiores) */
-.card { width: 260px; height: 420px; background: transparent; perspective: 1200px; cursor: pointer; position: relative; }
-.card .front, .card .back { position: absolute; width: 100%; height: 100%; border-radius: 14px; backface-visibility: hidden; transition: transform 0.8s; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.6); }
-.card .front img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.card .back { background: #111; color: #fff; transform: rotateY(180deg); padding: 20px; box-sizing: border-box; border: 1px solid rgba(198,255,0,0.12); display: flex; flex-direction: column; }
-.card .back h3 { margin: 0 0 8px 0; }
-.card .back ul { margin: 8px 0 12px 16px; padding: 0; }
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* Cartas estilo baralho */
+.card {
+  width: 260px;
+  height: 420px;
+  background: transparent;
+  perspective: 1200px;
+  cursor: pointer;
+  position: relative;
+}
+
+.card .front,
+.card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  backface-visibility: hidden;
+  transition: transform 0.8s;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+.card .front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card .back {
+  background: #111;
+  color: #fff;
+  transform: rotateY(180deg);
+  padding: 16px;
+  box-sizing: border-box;
+  border: 1px solid rgba(198,255,0,0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.card .back h3 { margin: 0 0 8px 0; font-size: 1.15rem; }
+.card .back ul { margin: 8px 0 12px 14px; padding: 0; list-style: none; }
 .card .back ul li {
-    font-size: 14px;   /* aqui você controla o tamanho */
-    line-height: 1.0;  /* melhora a leitura */
-    margin-bottom: 6px;
-  }
-.card .back .btn { margin-top: auto; align-self: stretch; }
+  font-size: 0.95rem;
+  line-height: 1.25;
+  margin-bottom: 8px;
+  padding-left: 0;
+  position: relative;
+}
+
+/* pequeno marcador verde no item (pseudo) */
+.card .back ul li::before {
+  content: "•";
+  color: #C6FF00;
+  display: inline-block;
+  width: 18px;
+  margin-left: -18px;
+}
+
+/* botão do verso preencha a largura */
+.card .back .btn { margin-top: auto; align-self: stretch; display: inline-flex; justify-content: center; }
+
+/* flip states */
 .card.flipped .front { transform: rotateY(180deg); }
 .card.flipped .back { transform: rotateY(360deg); }
 
-.portfolio-banner { text-align: center; padding: 80px 20px; background: linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.6)); }
+/* ================== PORTFÓLIO ================== */
+.portfolio-banner {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+}
 
-.contato { padding: 50px 20px; text-align: center; }
+.portfolio-title {
+  color: #C6FF00;
+  font-size: 1.8rem;
+  margin: 40px 0 20px;
+  text-align: center;
+}
 
-/* Sub-headers das páginas internas */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.item, .portfolio-item {
+  background: #111;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 1px solid rgba(198,255,0,0.06);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s;
+}
+.portfolio-item img:hover { transform: scale(1.05); }
+
+/* ================== MODAL ================== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 2100;
+}
+.modal video { max-width: 90%; max-height: 80%; border: 3px solid #C6FF00; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.7); }
+.close { position: absolute; top: 20px; right: 30px; color: #C6FF00; font-size: 36px; font-weight: bold; cursor: pointer; transition: transform 0.2s; }
+.close:hover { transform: scale(1.2); color: #fff; }
+
+/* ================== SUBHEADER / COMPARAÇÃO ================== */
 .sub-header { background: rgba(17,17,17,0.9); padding: 18px 10px; }
 .sub-header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 16px; justify-content: space-between; }
 .logo-img-small { height: 36px; }
@@ -91,195 +287,170 @@ body {
 .comparacao table { max-width: 1100px; width: 100%; border-collapse: collapse; margin: 0 12px; }
 .comparacao th, .comparacao td { border: 1px solid #C6FF00; padding: 12px; text-align: center; }
 
-.portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; padding: 20px; max-width: 1200px; margin: 0 auto; }
-.item { background: #111; padding: 8px; text-align: center; cursor: pointer; border-radius: 12px; border: 1px solid rgba(198,255,0,0.08); }
-.portfolio-item { background: #111; padding: 8px; text-align: center; cursor: pointer; border-radius: 12px; border: 1px solid rgba(198,255,0,0.08); }
+/* ================== OUTROS ================== */
+.highlight { color: #C6FF00; font-weight: 700; }
 
-
-.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; z-index: 999; }
-.modal video { max-width: 80%; }
-.close { position: absolute; top: 20px; right: 40px; color: #C6FF00; font-size: 40px; cursor: pointer; }
-
-/* Responsividade */
+/* ================== RESPONSIVIDADE ================== */
+/* Large tablets / small desktops */
 @media (max-width: 900px) {
-  .hero { padding: 80px 18px; min-height: 320px; }
+  .hero { min-height: 320px; padding: 80px 18px; }
   .hero-content h1 { font-size: 1.6rem; }
   .servico img { max-width: 100%; }
   .servico { flex-direction: column; }
   .cards { gap: 14px; }
 }
-@media (max-width: 520px) {
-  .navbar .menu { display: none; }
-  .logo-img { height: 36px; }
-  /*.card { width: 200px; height: 340px; }*/
+
+/* Mobile behavior */
+@media (max-width: 768px) {
+  /* show hamburger */
+  .menu-toggle { display: block; }
+
+  /* hide desktop menu, show mobile dropdown when .show is set */
+  .navbar .menu {
+    display: none; /* hidden by default in mobile */
+    position: absolute;
+    top: 100%; /* directly below the navbar container */
+    right: 20px; /* aligned to container padding */
+    min-width: 180px;
+    background: #111;
+    padding: 12px 14px;
+    flex-direction: column;
+    gap: 12px;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    z-index: 2050;
+  }
+
+  /* support both .menu.show and #navLinks.show if you use id */
+  .navbar .menu.show,
+  .navbar #navLinks.show {
+    display: flex;
+  }
+
+  .navbar .menu li { margin: 0; text-align: center; }
+  .navbar .menu li a { display: inline-block; padding: 8px 6px; }
+
+  /* Cards: layout side-by-side with horizontal scroll */
+  .cards {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 12px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .card {
+    flex: 0 0 180px; /* reasonable mobile width for the card */
+    height: 300px;
+    margin: 0;
+  }
+  .card .back { font-size: 0.85rem; line-height: 1.15; }
+  .card .back h3 { font-size: 1rem; margin: 6px 0; }
+  .card .back ul { font-size: 0.85rem; margin: 6px 0 8px 10px; }
+
+  /* Hero spacing on very small screens */
+  .hero { padding: 60px 14px; }
 }
 
-.highlight {
-    color: #ccff00; /* verde limão */
-    font-weight: bold;
-  }
+/* Very small phones */
+@media (max-width: 520px) {
+  .logo-img { height: 36px; }
+  .hero-content h1 { font-size: 1.25rem; }
+  .card { flex: 0 0 150px; height: 260px; }
+  .navbar-container { padding: 0 12px; }
+}
 
-  /* Modal do vídeo */
+.btn-whatsapp {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 20px;
+  background: #25d366;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  background: #1ebe57;
+}
+
+.btn-servico, .btn-whatsapp {
+  display: inline-block;
+  margin: 10px 5px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-servico {
+  background: #007bff;
+  color: #fff;
+}
+
+.btn-servico:hover {
+  background: #0056b3;
+}
+
+.btn-whatsapp {
+  background: #25d366;
+  color: #fff;
+}
+
+.btn-whatsapp:hover {
+  background: #1ebe57;
+}
+
+/* Modal */
 .modal {
-    display: none; /* escondido por padrão */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.9);
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modal video {
-    max-width: 90%;
-    max-height: 80%;
-    border: 3px solid #ccff00; /* verde limão */
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.7);
-  }
-  
-  .modal .close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: #ccff00;
-    font-size: 36px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
-  
-  .modal .close:hover {
-    transform: scale(1.2);
-    color: #fff;
-  }
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+}
 
-  .portfolio-item img {
-    width: 100%;         /* ocupa toda a largura disponível */
-    max-width: 300px;    /* mas nunca maior que 250px */
-    height: auto;        /* mantém proporção */
-    border-radius: 10px; 
-    display: block;
-    margin: 0 auto;      /* centraliza */
-    transition: transform 0.3s;
-  }
-  
-  .portfolio-item img:hover {
-    transform: scale(1.05); /* efeito leve no hover */
-  }
-  
-  /* Responsividade */
-  @media (max-width: 768px) {
-    .portfolio-item img {
-      max-width: 100%;  /* menor em tablets */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .portfolio-item img {
-      max-width: 100%;  /* menor em celular */
-    }
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  margin: 10% auto;
+  width: 90%; max-width: 500px;
+  border-radius: 10px;
+  text-align: center;
+}
 
-  }
+.modal textarea {
+  width: 100%;
+  height: 120px;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+}
 
-  /* Ajuste só para mobile */
-@media (max-width: 768px) {
-    .planos-container {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: nowrap; /* impede quebra de linha */
-      overflow-x: auto;  /* rolagem horizontal se a tela for muito estreita */
-      padding-bottom: 10px;
-    }
-  
-    .card {
-      flex: 0 0 140px; /* largura fixa para não distorcer */
-      height: 210px;   /* mantém proporção menor no mobile */
-      margin: 0 5px;
-    }
-  
-    /* Verso dos cards */
-.card .back {
-    font-size: 0.2rem;   /* reduz fonte geral */
-    line-height: 0.6;    /* diminui espaçamento */
-  }
-  
-  .card .back h3 {
-    font-size: 0.8rem;   /* título menor */
-    margin-bottom: 10px;
-    margin-top: 2px;
-  }
-  
-  .card .back ul {
-    font-size: 0.7rem;  /* lista mais compacta */
-    line-height: 1.0;
-    margin: 2px 0 2px 2px;
-  }
-  
-  .card .back .btn {
-    font-size: 0.85rem;  /* botão menor */
-    padding: 8px 12px;
-  }
-  }
+.modal button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
 
-.portfolio-title {
-    color: #ccff00;
-    font-size: 1.8rem;
-    margin: 40px 0 20px;
-    text-align: center;
-  }
+.modal button:hover {
+  background: #0056b3;
+}
 
-  /* Botão hamburguer */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 28px;
-    color: #ccff00; /* verde limão */
-    cursor: pointer;
-  }
-
-  /* Regras só no mobile */
-@media (max-width: 768px) {
-    .menu-toggle {
-      display: block;
-    }
-  
-    .menu {
-      display: none;
-      flex-direction: column;
-      background: #111;
-      position: absolute;
-      top: 60px;   /* ajusta dependendo da altura da navbar */
-      right: 10px;
-      padding: 15px;
-      border-radius: 10px;
-      z-index: 999;
-    }
-  
-    .menu.show {
-      display: flex;
-    }
-  
-    .menu li {
-      margin: 10px 0;
-    }
-    .navbar {
-        position: relative; /* ou fixed, já explico */
-        z-index: 1000;      /* bem acima do hero */
-      }
-  }
-
-
-
-
-
-
-
-
-
-
+#respostaRoteiro {
+  margin-top: 15px;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 14px;
+}
