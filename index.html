@@ -39,18 +39,19 @@
   </header>
 
   <!-- Serviços -->
-  <section id="caasix-motion" class="servico">  
-    <!-- Botão Criar Roteiro -->
-    <button class="btn-servico" onclick="abrirRoteiro()">✍️ Criar Roteiro</button>
-  
-    <!-- Botão Orçamento -->
-    <a class="btn-whatsapp"
-       href="https://wa.me/5581994509605?text=Olá,%20quero%20fazer%20um%20orçamento%20no%20serviço%20CaaSix%20Motion." 
-       target="_blank">
-       💬 Orçamento
-    </a>
-  </section>
-  
+  <section class="motion-banner">
+  <div class="motion-overlay">
+    <h2><span class="highlight">Caasix Motion</span></h2>
+    <p>Transformamos ideias em vídeos criativos e impactantes.</p>
+<p>Edição de Vídeo + Motion + locução + animação criativa.</p>
+
+    <div class="motion-buttons">
+      <button class="btn" onclick="abrirChat()">🎬 Criar Roteiro</button>
+      <a href="https://wa.me/5581994509605?text=Olá,%20quero%20um%20orçamento%20do%20plano%20Caasix%20Motion" 
+         target="_blank" class="btn">💬 Orçamento</a>
+    </div>
+  </div>
+</section>
   <!-- Modal Criar Roteiro -->
   <div id="modalRoteiro" class="modal">
     <div class="modal-content">
@@ -63,13 +64,13 @@
   </div>
   
   <section id="servicos" class="servicos">
-    <div class="servico">
+    <!--<div class="servico">
       <div class="texto">
         <h2><span class="highlight">Caasix Motion</span></h2>
         <p>Edição de Vídeo + Motion - Transformamos suas ideias em conteúdos audiovisuais impactantes, com edição, locução e animação criativa.</p>
       </div>
-      <img src="img/banner-Caasixmotion.jpg" alt="Edição de vídeo">
-    </div>
+      <img src="/img/banner-Caasixmotion.jpg" alt="Edição de vídeo">
+    </div>-->
     <div class="servico">
       <img src="img/banner-CaasixContent.jpg" alt="Social Media">
       <div class="texto">
@@ -152,5 +153,6 @@
       document.getElementById("navLinks").classList.toggle("show");
     }
     </script>
+
 
 
