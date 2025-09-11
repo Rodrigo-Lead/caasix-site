@@ -16,7 +16,7 @@ body {
 
 /* ================== HERO ================== */
 .hero {
-  background: url('/img/Bg.png') center/cover no-repeat;
+  background: url('img/Bg.png') center/cover no-repeat;
   text-align: center;
   padding: 120px 20px;
   position: relative;
@@ -454,3 +454,4 @@ body {
   text-align: left;
   font-size: 14px;
 }
+
