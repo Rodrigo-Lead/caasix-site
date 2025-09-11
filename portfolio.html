@@ -1,4 +1,3 @@
-
 <!-- portfolio.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -9,42 +8,75 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="sub-header">
-    <div class="sub-header-inner">
-      <a href="index.html"><img src="img/Logo-caaxis.png" alt="CaaSix" class="logo-img-small"></a>
-      <h1>Portfólio</h1>
-      <a href="index.html" class="btn">Home</a>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="/img/Logo-caaxis.png" alt="CaaSix" class="logo-img">
+        </a>
+      </div>
+
+      <!-- Botão hamburguer -->
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+      <!-- Links -->
+      <ul class="menu" id="navLinks">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="index.html#servicos">Serviços</a></li>
+        <li><a href="index.html#planos">Planos</a></li>
+        <li><a href="portfolio.html">Portfólio</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+      </ul>
     </div>
-  </header>
-    <h2 class="portfolio-title">Vídeos Institucionais</h2>
+  </nav>
+
+  <!-- Espaço para compensar navbar fixa -->
+  <div style="height:60px"></div>
+
+  <!-- CONTEÚDO PORTFÓLIO -->
+  <h2 class="portfolio-title">Vídeos Institucionais</h2>
   <section class="portfolio-grid">
     <div class="portfolio-item" onclick="openVideo('img/VT60s_1920x1080 (Telao)_LEG_25mb.mp4')">
-        <img src="img/thumb-projeto1.jpg" alt="Projeto 1">
-        <h3><span class="highlight">Grupo Primova</span></h3>
-      </div>
-      <div class="portfolio-item" onclick="openVideo('img/Vt-cittamobi_25Mb.mp4')">
-        <img src="img/thumb-cittamobi.jpg" alt="Projeto 1">
-        <h3><span class="highlight">CittaMobi</span></h3>
-      </div>
-      <div class="portfolio-item" onclick="openVideo('img/BRT SOROCABA 25Mb.mp4')">
-        <img src="img/thumb-brt-sorocaba.jpg" alt="Projeto 1">
-        <h3><span class="highlight">BRT Sorocaba</span></h3>
-      </div>
-      <div class="portfolio-item" onclick="openVideo('img/Mobibrasil-Represa 25Mb.mp4')">
-        <img src="img/thumb-mobibrasil.jpg" alt="Projeto 1">
-        <h3><span class="highlight">Mobibrasil</span></h3>
-      </div>
-      <div class="portfolio-item" onclick="openVideo('img/VT-exploreAI-1920x1080-25Mb.mp4')">
-        <img src="img/thumb-exploreai.jpg" alt="Projeto 1">
-        <h3><span class="highlight">ExploreAi</span></h3>
-      </div>
-      <div class="portfolio-item" onclick="openVideo('img/VT-GBioEnergia-FullHD-v8 25Mb.mp4')">
-        <img src="img/thumb-gbioenergia.jpg" alt="Projeto 1">
-        <h3><span class="highlight">Gbio Energia</span></h3>
-      </div>
+      <img src="/img/thumb-projeto1.jpg" alt="Projeto 1">
+      <h3><span class="highlight">Grupo Primova</span></h3>
+    </div>
+    <div class="portfolio-item" onclick="openVideo('img/Vt-cittamobi_25Mb.mp4')">
+      <img src="/img/thumb-cittamobi.jpg" alt="Projeto 2">
+      <h3><span class="highlight">CittaMobi</span></h3>
+    </div>
+    <div class="portfolio-item" onclick="openVideo('img/BRT SOROCABA 25Mb.mp4')">
+      <img src="/img/thumb-brt-sorocaba.jpg" alt="Projeto 3">
+      <h3><span class="highlight">BRT Sorocaba</span></h3>
+    </div>
+    <div class="portfolio-item" onclick="openVideo('img/Mobibrasil-Represa 25Mb.mp4')">
+      <img src="/img/thumb-mobibrasil.jpg" alt="Projeto 4">
+      <h3><span class="highlight">Mobibrasil</span></h3>
+    </div>
+    <div class="portfolio-item" onclick="openVideo('img/VT-exploreAI-1920x1080-25Mb.mp4')">
+      <img src="/img/thumb-exploreai.jpg" alt="Projeto 5">
+      <h3><span class="highlight">ExploreAi</span></h3>
+    </div>
+    <div class="portfolio-item" onclick="openVideo('img/VT-GBioEnergia-FullHD-v8 25Mb.mp4')">
+      <img src="/img/thumb-gbioenergia.jpg" alt="Projeto 6">
+      <h3><span class="highlight">Gbio Energia</span></h3>
+    </div>
   </section>
 
-  <!-- Modal -->
+  <h2 class="portfolio-title">Animações</h2>
+  <section class="portfolio-grid">
+    <div class="portfolio-item" onclick="openVideo('img/animacao1.mp4')">
+      <img src="/img/thumb-animacao1.jpg" alt="Animação 1">
+      <h3><span class="highlight">Animação 1</span></h3>
+    </div>
+    <div class="portfolio-item" onclick="openVideo('img/animacao2.mp4')">
+      <img src="/img/thumb-animacao2.jpg" alt="Animação 2">
+      <h3><span class="highlight">Animação 2</span></h3>
+    </div>
+    <!-- pode adicionar mais animações aqui -->
+  </section>
+
+  <!-- MODAL -->
   <div id="modal" class="modal">
     <span class="close" onclick="closeModal()">&times;</span>
     <video id="modal-video" controls></video>
@@ -57,7 +89,4 @@
 
   <script src="script.js"></script>
 </body>
-
 </html>
-
-
