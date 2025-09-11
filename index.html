@@ -10,22 +10,26 @@
 <body>
   <!-- Header -->
   <nav class="navbar">
-    <div class="logo">
-      <a href="index.html">
-        <img src="img/Logo-caaxis.png" alt="CaaSix" class="logo-img">
-      </a>
+    <div class="navbar-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="/img/Logo-caaxis.png" alt="CaaSix" class="logo-img">
+        </a>
+      </div>
+  
+      <!-- Remova onclick inline se tiver; vamos adicionar listener via JS -->
+      <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menu">
+        ☰
+      </button>
+  
+      <ul class="menu" id="navLinks" role="menu" aria-hidden="true">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#planos">Planos</a></li>
+        <li><a href="portfolio.html">Portfólio</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
     </div>
-  
-    <!-- Botão hamburguer (só aparece no mobile) -->
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-  
-    <ul class="menu" id="navLinks">
-      <li><a href="index.html">Início</a></li>
-      <li><a href="#servicos">Serviços</a></li>
-      <li><a href="#planos">Planos</a></li>
-      <li><a href="portfolio.html">Portfólio</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
   </nav>
   <header class="hero">
     <div class="hero-content">
@@ -35,16 +39,42 @@
   </header>
 
   <!-- Serviços -->
+  <section id="caasix-motion" class="servico">
+    <h2>CaaSix Motion</h2>
+    <p>Transformamos ideias em animações e vídeos que conectam.</p>
+  
+    <!-- Botão Criar Roteiro -->
+    <button class="btn-servico" onclick="abrirRoteiro()">✍️ Criar Roteiro</button>
+  
+    <!-- Botão Orçamento -->
+    <a class="btn-whatsapp"
+       href="https://wa.me/5581994509605?text=Olá,%20quero%20fazer%20um%20orçamento%20no%20serviço%20CaaSix%20Motion." 
+       target="_blank">
+       💬 Orçamento
+    </a>
+  </section>
+  
+  <!-- Modal Criar Roteiro -->
+  <div id="modalRoteiro" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="fecharRoteiro()">&times;</span>
+      <h3>Crie seu roteiro de vídeo 🎬</h3>
+      <textarea id="ideiaVideo" placeholder="Digite a sua ideia de vídeo aqui..."></textarea>
+      <button onclick="gerarRoteiro()">Gerar Roteiro</button>
+      <div id="respostaRoteiro"></div>
+    </div>
+  </div>
+  
   <section id="servicos" class="servicos">
     <div class="servico">
       <div class="texto">
         <h2><span class="highlight">Caasix Motion</span></h2>
         <p>Edição de Vídeo + Motion - Transformamos suas ideias em conteúdos audiovisuais impactantes, com edição, locução e animação criativa.</p>
       </div>
-      <img src="img/banner-Caasixmotion.jpg" alt="Edição de vídeo">
+      <img src="/img/banner-Caasixmotion.jpg" alt="Edição de vídeo">
     </div>
     <div class="servico">
-      <img src="img/banner-CaasixContent.jpg" alt="Social Media">
+      <img src="/img/banner-CaasixContent.jpg" alt="Social Media">
       <div class="texto">
         <h2><span class="highlight">Caasix Content</span></h2>
         <p>Gerenciamos suas redes com estratégia e criatividade para gerar mais engajamento e resultados.</p>
@@ -52,13 +82,14 @@
     </div>
   </section>
 
+  
   <!-- Planos -->
   <section id="planos" class="planos">
     <h2><span class="highlight">Planos</span></h2>
     <div class="cards">
       <div class="card" onclick="flipCard(this)">
         <div class="front">
-          <img src="img/Plano-orange.png" alt="Plano Bronze">
+          <img src="/img/Plano-orange.png" alt="Plano Bronze">
         </div>
         <div class="back">
           <h3><span class="highlight">Plano Orange</span></h3>
@@ -72,7 +103,7 @@
       </div>
       <div class="card" onclick="flipCard(this)">
         <div class="front">
-          <img src="img/Plano-green.png" alt="Plano Prata">
+          <img src="/img/Plano-green.png" alt="Plano Prata">
         </div>
         <div class="back">
           <h3><span class="highlight">Plano Green</span></h3>
@@ -86,7 +117,7 @@
       </div>
       <div class="card" onclick="flipCard(this)">
         <div class="front">
-          <img src="img/Plano-yellow.png" alt="Plano Ouro">
+          <img src="/img/Plano-yellow.png" alt="Plano Ouro">
         </div>
         <div class="back">
           <h3><span class="highlight">Plano Yellow</span></h3>
@@ -117,9 +148,10 @@
 
   <script src="script.js"></script>
 </body>
-
 </html>
 
-
-
-
+<script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
+    </script>
