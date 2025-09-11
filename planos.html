@@ -1,4 +1,4 @@
--<!-- planos.html -->
+<!-- planos.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -8,21 +8,44 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="sub-header">
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="/img/Logo-caaxis.png" alt="CaaSix" class="logo-img">
+        </a>
+      </div>
+  
+      <!-- Botão hamburguer (só no mobile) -->
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  
+      <ul class="menu" id="navLinks">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="index.html#servicos">Serviços</a></li>
+        <li><a href="planos.html">Planos</a></li>
+        <li><a href="portfolio.html">Portfólio</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HEADER DA PÁGINA -->
+  <header class="sub-header" style="margin-top:60px">
     <div class="sub-header-inner">
-      <a href="index.html"><img src="img/Logo-caaxis.png" alt="CaaSix" class="logo-img-small"></a>
-      <h1>Comparação de Planos</h1>
-      <a href="index.html" class="btn">Home</a>
+
     </div>
   </header>
+
+  <!-- SEÇÃO DE PLANOS -->
   <section class="comparacao">
     <table>
       <thead>
         <tr>
-          <th>Recursos</th>
-          <th>Bronze</th>
-          <th>Prata</th>
-          <th>Ouro</th>
+          <th>Planos</th>
+          <th>Orange</th>
+          <th>Green</th>
+          <th>Yellow</th>
         </tr>
       </thead>
       <tbody>
@@ -68,25 +91,61 @@
           <td>4 dias</td>
           <td>2 dias</td>
         </tr>
-        <tr>
+        <!--<tr>
           <td>Valor</td>
-          <td>R$ 8.000/mês</td>
-          <td>R$ 9.000/mês</td>
-          <td>R$ 10.000/mês</td>
-        </tr>
+          <td><span class="highlight">R$ 1.000/mês</span></td>
+          <td><span class="highlight">R$ 1.500/mês</span></td>
+          <td><span class="highlight">R$ 2.500/mês</span></td>
+        </tr>-->
         <tr>
-            <td></td>
-            <td>*Vídeos curtos para reels.</td>
-            <td>*Vídeos curtos para reels.</td>
-            <td>*Vídeos curtos para reels.</td>
-          </tr>
+          <td></td>
+          <td>*Vídeos curtos para reels.</td>
+          <td>*Vídeos curtos para reels.</td>
+          <td>*Vídeos curtos para reels.</td>
+        </tr>
+        <!-- BOTÕES DO WHATSAPP -->
+        <tr>
+          <td></td>
+          <td>
+            <a class="btn-whatsapp" 
+               href="https://wa.me/5581994509605?text=Olá,%20tenho%20interesse%20no%20Plano%20Orange%20da%20CaaSix%20e%20gostaria%20de%20saber%20mais." 
+               target="_blank">
+               Quero o Bronze 🚀
+            </a>
+          </td>
+          <td>
+            <a class="btn-whatsapp" 
+               href="https://wa.me/5581994509605?text=Olá,%20tenho%20interesse%20no%20Plano%20Green%20da%20CaaSix%20e%20gostaria%20de%20saber%20mais." 
+               target="_blank">
+               Quero o Prata ✨
+            </a>
+          </td>
+          <td>
+            <a class="btn-whatsapp" 
+               href="https://wa.me/5581994509605?text=Olá,%20tenho%20interesse%20no%20Plano%20Yellow%20da%20CaaSix%20e%20gostaria%20de%20saber%20mais." 
+               target="_blank">
+               Quero o Ouro 👑
+            </a>
+          </td>
+        </tr>
       </tbody>
     </table>
   </section>
+  
+
+  <script>
+    // ===== MENU MOBILE =====
+    function toggleMenu() {
+      const menu = document.getElementById("navLinks");
+      menu.classList.toggle("show");
+    }
+
+    // Fecha menu ao clicar em um link
+    document.querySelectorAll(".menu a").forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("show");
+      });
+    });
+  </script>
 </body>
 </html>
-
-
-
-
-
