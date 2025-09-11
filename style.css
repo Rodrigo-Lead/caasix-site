@@ -456,7 +456,7 @@ body {
 }
 
 .motion-banner {
-  background: url('/img/banner-Caasixmotion.jpg') center/cover no-repeat;
+  background: url('img/banner-Caasixmotion.jpg') center/cover no-repeat;
   min-height: 300px;              /* altura da faixa */
   position: relative;
   display: flex;
@@ -500,6 +500,7 @@ body {
 .motion-buttons .btn:hover {
   background: #a5d600;
 }
+
 
 
 
