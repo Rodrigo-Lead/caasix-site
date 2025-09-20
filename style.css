@@ -355,7 +355,7 @@ body {
 @media (max-width: 520px) {
   .logo-img { height: 36px; }
   .hero-content h1 { font-size: 1.25rem; }
-  .card { flex: 0 0 150px; height: 260px; }
+  .card { flex: 0 0 180px; height: 300px; }
   .navbar-container { padding: 0 12px; }
 }
 
@@ -500,6 +500,7 @@ body {
 .motion-buttons .btn:hover {
   background: #a5d600;
 }
+
 
 
 
