@@ -3,6 +3,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  text-align: center;
 }
 
 body {
@@ -500,6 +501,7 @@ body {
 .motion-buttons .btn:hover {
   background: #a5d600;
 }
+
 
 
 
