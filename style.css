@@ -481,6 +481,31 @@ body {
   max-width: 800px;
 }
 
+.social-overlay {
+  position: relative; 
+  z-index: 2; 
+  max-width: 800px;
+
+
+.social-banner {
+  background: url('img/banner-CaasixContent.jpg') center/cover no-repeat;
+  min-height: 250px;              /* altura da faixa */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;          /* joga conteúdo para baixo */
+  padding-bottom: 60px;           /* controla distância do fundo */
+  text-align: center;
+  color: #fff;
+}
+
+.social-banner::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);   /* escurece a imagem */
+}
+
 .motion-buttons {
   display: flex;
   justify-content: center;
@@ -501,6 +526,7 @@ body {
 .motion-buttons .btn:hover {
   background: #a5d600;
 }
+
 
 
 
